@@ -1,3 +1,5 @@
+//soal nomor 3, multithreading
+
 #include<pthread.h>
 #include<stdio.h>
 #include<stdlib.h>
