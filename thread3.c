@@ -32,12 +32,14 @@ void* t2(void *ptr)
 
 int main()
 {
-	pthread_t tid;
-	pthread_create(&tid,NULL,&t1,NULL);
+	pthread_t tid1, tid2;
+	int sesuatu=0;
+
+	(void) pthread_create(&tid1,NULL,t1,&sesuatu);
+	(void) pthread_create(&tid2,NULL,t2,&sesuatu);
 	printf("Thread created\n");
-	pthread_join(tid,NULL);
-	pthread_create(&tid,NULL,&t2,NULL);
-	printf("Thread 2 created\n");
-	pthread_join(tid,NULL);
+
+	(void) pthread_join(tid1,NULL);
+	(void) pthread_join(tid2,NULL);
 	return 0;
 }
